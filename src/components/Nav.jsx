@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const links = [
+  ['/', 'Accueil'],
   ['/objet', 'Objet'],
   ['/continuite', 'Continuité'],
   ['/domaines', 'Domaines'],
