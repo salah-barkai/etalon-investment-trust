@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Preloader from './components/Preloader.jsx'
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import Intro from './components/Intro.jsx'
@@ -36,6 +37,7 @@ export default function App() {
 
   return (
     <>
+      <Preloader />
       <Nav activePath={path} />
       <main id="top" className={isContact ? 'contact-page' : 'site-page'}>
         {isHome ? (
