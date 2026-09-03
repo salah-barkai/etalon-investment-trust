@@ -4,6 +4,7 @@ const links = [
   ['/objet', 'Objet'],
   ['/continuite', 'Continuité'],
   ['/domaines', 'Domaines'],
+  ['/leadership', 'Leadership'],
   ['/localisation', 'Localisation'],
   ['/contact', 'Contact'],
 ]

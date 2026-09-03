@@ -6,6 +6,7 @@ import Intro from './components/Intro.jsx'
 import Continuity from './components/Continuity.jsx'
 import Domains from './components/Domains.jsx'
 import Location from './components/Location.jsx'
+import Leadership from './components/Leadership.jsx'
 import Footer from './components/Footer.jsx'
 import useReveal from './hooks/useReveal.js'
 
@@ -14,9 +15,12 @@ const pages = {
   '/objet': { title: 'Notre objet', content: <Intro /> },
   '/continuite': { title: 'Stallion → Étalon', content: <Continuity /> },
   '/domaines': { title: 'Nos domaines', content: <Domains /> },
+  '/leadership': { title: 'Direction & équipe', content: <Leadership /> },
   '/localisation': { title: 'Nous localiser', content: <Location /> },
   '/contact': { title: 'Nous contacter', content: null },
 }
+
+const REDIRECTS = { '/accueil': '/' }
 
 function currentPath() {
   const path = window.location.pathname.replace(/\/$/, '') || '/'
@@ -24,16 +28,24 @@ function currentPath() {
 }
 
 export default function App() {
+  const rawPath = window.location.pathname.replace(/\/$/, '') || '/'
+  const redirectTo = REDIRECTS[rawPath]
   const path = currentPath()
   const page = pages[path]
   const isHome = path === '/'
   const isContact = path === '/contact'
 
   useEffect(() => {
+    if (redirectTo) window.location.replace(redirectTo)
+  }, [redirectTo])
+
+  useEffect(() => {
     document.title = `${page.title} — Étalon Investment Trust`
   }, [page.title])
 
   useReveal([path])
+
+  if (redirectTo) return null
 
   return (
     <>
