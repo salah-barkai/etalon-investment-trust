@@ -5,14 +5,14 @@ export default function Location() {
   return (
     <section id="localisation">
       <div className="wrap">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <div>
             <span className="eyebrow">Siège social</span>
             <h2>Nous localiser à Rabat</h2>
           </div>
         </div>
 
-        <div className="loc-grid">
+        <div className="loc-grid" data-reveal>
           <div className="coord-panel">
             <div className="coord-row">
               <span className="coord-label">Adresse</span>

@@ -4,7 +4,7 @@ export default function Domains() {
   return (
     <section id="domaines">
       <div className="wrap">
-        <div className="section-head">
+        <div className="section-head" data-reveal>
           <div>
             <span className="eyebrow">Champ d'intervention</span>
             <h2>26 domaines d'activité</h2>
@@ -13,8 +13,8 @@ export default function Domains() {
         </div>
 
         <div className="domain-list">
-          {domains.map((d) => (
-            <div className="domain" key={d.num}>
+          {domains.map((d, i) => (
+            <div className="domain" key={d.num} data-reveal style={{ '--i': i % 6 }}>
               <span className="domain-num">{d.num}</span>
               <div>
                 <h3>{d.title}</h3>
