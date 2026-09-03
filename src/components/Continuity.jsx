@@ -1,10 +1,19 @@
+import { Compass, Sparkles, Leaf, Construction, PlaneTakeoff, Truck, Building2, Hotel, Wheat } from 'lucide-react'
+
 const pillars = [
-  ['01', 'Rigueur stratégique', 'Des décisions structurées autour de la mesure, de la discipline et d’une vision de long terme.'],
-  ['02', 'Innovation maîtrisée', 'Des solutions ambitieuses, ancrées dans les besoins réels des territoires et des marchés.'],
-  ['03', 'Impact durable', 'Des projets conçus pour créer une valeur pérenne pour les partenaires, les usagers et les écosystèmes.'],
+  ['01', Compass, 'Rigueur stratégique', 'Des décisions structurées autour de la mesure, de la discipline et d’une vision de long terme.'],
+  ['02', Sparkles, 'Innovation maîtrisée', 'Des solutions ambitieuses, ancrées dans les besoins réels des territoires et des marchés.'],
+  ['03', Leaf, 'Impact durable', 'Des projets conçus pour créer une valeur pérenne pour les partenaires, les usagers et les écosystèmes.'],
 ]
 
-const sectors = ['Infrastructures', 'Aviation', 'Transport', 'Immobilier', 'Hôtellerie', 'Agriculture']
+const sectors = [
+  ['Infrastructures', Construction],
+  ['Aviation', PlaneTakeoff],
+  ['Transport', Truck],
+  ['Immobilier', Building2],
+  ['Hôtellerie', Hotel],
+  ['Agriculture', Wheat],
+]
 
 export default function Continuity() {
   return (
@@ -25,8 +34,11 @@ export default function Continuity() {
 
         <div className="continuity-content" data-reveal>
           <div className="sector-cloud" aria-label="Secteurs issus de l'expérience Stallion Investment">
-            {sectors.map((sector) => (
-              <span key={sector}>{sector}</span>
+            {sectors.map(([sector, Icon]) => (
+              <span key={sector}>
+                <Icon aria-hidden="true" strokeWidth={1.6} />
+                {sector}
+              </span>
             ))}
           </div>
           <div className="continuity-source">
@@ -41,9 +53,10 @@ export default function Continuity() {
         </div>
 
         <div className="pillar-grid">
-          {pillars.map(([number, title, description], i) => (
+          {pillars.map(([number, Icon, title, description], i) => (
             <article className="pillar" key={number} data-reveal style={{ '--i': i }}>
-              <span>{number}</span>
+              <Icon className="pillar-icon" aria-hidden="true" strokeWidth={1.2} />
+              <span className="pillar-num">{number}</span>
               <h3>{title}</h3>
               <p>{description}</p>
             </article>
