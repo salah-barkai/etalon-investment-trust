@@ -3,7 +3,11 @@ import { useEffect, useState } from 'react'
 function shouldShow() {
   if (typeof window === 'undefined') return false
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false
-  return !sessionStorage.getItem('etalon-intro-shown')
+  try {
+    return !sessionStorage.getItem('etalon-intro-shown')
+  } catch {
+    return false
+  }
 }
 
 export default function Preloader() {
@@ -13,7 +17,11 @@ export default function Preloader() {
   useEffect(() => {
     if (!mounted) return undefined
 
-    sessionStorage.setItem('etalon-intro-shown', '1')
+    try {
+      sessionStorage.setItem('etalon-intro-shown', '1')
+    } catch {
+      // ignore: storage may be unavailable (private mode, restricted settings)
+    }
     document.body.classList.add('intro-lock')
 
     const leaveTimer = setTimeout(() => setLeaving(true), 1500)

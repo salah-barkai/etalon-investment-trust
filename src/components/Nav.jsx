@@ -35,8 +35,8 @@ export default function Nav({ activePath }) {
       <header className={`nav${scrolled ? ' scrolled' : ''}${open ? ' open' : ''}`}>
         <div className="nav-inner">
           <a className="brand" href="/">
-            <img className="brand-mark" src="/etalon-emblem.png" alt="" width="42" height="52" />
-            Étalon Investment Trust <span className="mark">SARL</span>
+            <img className="brand-mark" src="/etalon-emblem.png" alt="Étalon Investment Trust" width="42" height="52" />
+            <span className="brand-text">Étalon Investment Trust <span className="mark">SARL</span></span>
           </a>
           <nav className="navlinks" aria-label="Navigation principale">
             {links.map(([href, label]) => (
