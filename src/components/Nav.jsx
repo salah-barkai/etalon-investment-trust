@@ -36,6 +36,16 @@ export default function Nav({ activePath }) {
     <>
       <header className={`nav${scrolled ? ' scrolled' : ''}${open ? ' open' : ''}`}>
         <div className="nav-inner">
+          <button
+            className="nav-burger"
+            type="button"
+            aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span />
+            <span />
+          </button>
           <a className="brand" href="/">
             <img className="brand-mark" src="/etalon-emblem.png" alt="Étalon Investment Trust" width="42" height="52" />
             <span className="brand-text">Étalon Investment Trust <span className="mark">SARL</span></span>
@@ -47,16 +57,6 @@ export default function Nav({ activePath }) {
               </a>
             ))}
           </nav>
-          <button
-            className="nav-burger"
-            type="button"
-            aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span />
-            <span />
-          </button>
           <span className="nav-progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
         </div>
       </header>
@@ -75,6 +75,9 @@ export default function Nav({ activePath }) {
             </a>
           ))}
         </nav>
+        <a className="nav-drawer-contact" href="/contact" style={{ '--i': links.length }} onClick={() => setOpen(false)}>
+          Nous contacter <span aria-hidden="true">→</span>
+        </a>
       </div>
     </>
   )

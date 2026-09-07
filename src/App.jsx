@@ -4,6 +4,8 @@ import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import Intro from './components/Intro.jsx'
 import Continuity from './components/Continuity.jsx'
+import Projects from './components/Projects.jsx'
+import Partners from './components/Partners.jsx'
 import Domains from './components/Domains.jsx'
 import Location from './components/Location.jsx'
 import Leadership from './components/Leadership.jsx'
@@ -58,6 +60,9 @@ export default function App() {
             <Intro />
             <hr className="divider" />
             <Continuity />
+            <hr className="divider" />
+            <Projects />
+            <Partners />
             <hr className="divider" />
             <Domains />
             <hr className="divider" />
