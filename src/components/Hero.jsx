@@ -53,10 +53,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      <div className="gauge-band" role="presentation">
-        <span className="gauge-marker">RÉFÉRENCE</span>
-      </div>
     </section>
   )
 }
