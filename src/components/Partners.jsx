@@ -1,7 +1,7 @@
-import { HardHat, Handshake, Construction, Landmark } from 'lucide-react'
+import { Handshake, Construction, Landmark } from 'lucide-react'
 import partners from '../data/partners.js'
 
-const ICONS = { HardHat, Handshake, Construction, Landmark }
+const ICONS = { Handshake, Construction, Landmark }
 
 export default function Partners() {
   const marqueeItems = [...partners, ...partners]
@@ -27,10 +27,16 @@ export default function Partners() {
 
         <div className="partner-list">
           {partners.map((p, i) => {
-            const Icon = ICONS[p.icon]
+            const Icon = p.icon ? ICONS[p.icon] : null
             return (
               <article className="partner-card" key={p.name} data-reveal style={{ '--i': i }}>
-                <Icon className="partner-icon" strokeWidth={1.4} aria-hidden="true" />
+                {p.logo ? (
+                  <span className="partner-logo">
+                    <img src={p.logo} alt={p.name} loading="lazy" />
+                  </span>
+                ) : (
+                  <Icon className="partner-icon" strokeWidth={1.4} aria-hidden="true" />
+                )}
                 <span className="partner-place">{p.place}</span>
                 <h3>{p.name}</h3>
                 <span className="partner-sector">{p.sector}</span>

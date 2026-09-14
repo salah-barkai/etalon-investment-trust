@@ -3,5 +3,6 @@ dist
 .vercel
 .env
 .env.local
+/Nouveau dossier/
 
 .vercel
