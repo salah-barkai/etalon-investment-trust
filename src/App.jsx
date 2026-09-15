@@ -3,6 +3,7 @@ import Preloader from './components/Preloader.jsx'
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import Conventions from './components/Conventions.jsx'
+import ConventionsPage from './components/ConventionsPage.jsx'
 import Intro from './components/Intro.jsx'
 import Continuity from './components/Continuity.jsx'
 import Projects from './components/Projects.jsx'
@@ -17,6 +18,7 @@ const pages = {
   '/': { title: 'Étalon Investment Trust', content: null },
   '/objet': { title: 'Notre objet', content: <Intro /> },
   '/continuite': { title: 'Stallion → Étalon', content: <Continuity /> },
+  '/conventions': { title: 'Conventions', content: <ConventionsPage /> },
   '/domaines': { title: 'Nos domaines', content: <Domains /> },
   '/leadership': { title: 'Direction & équipe', content: <Leadership /> },
   '/localisation': { title: 'Nous localiser', content: <Location /> },

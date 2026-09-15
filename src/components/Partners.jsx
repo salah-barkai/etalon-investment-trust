@@ -41,6 +41,11 @@ export default function Partners() {
                 <h3>{p.name}</h3>
                 <span className="partner-sector">{p.sector}</span>
                 <p>{p.description}</p>
+                {p.url && (
+                  <a className="partner-link" href={p.url} target="_blank" rel="noopener">
+                    Visiter le site <span aria-hidden="true">↗</span>
+                  </a>
+                )}
               </article>
             )
           })}
