@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Preloader from './components/Preloader.jsx'
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
+import StatsBand from './components/StatsBand.jsx'
 import Conventions from './components/Conventions.jsx'
 import ConventionsPage from './components/ConventionsPage.jsx'
 import Intro from './components/Intro.jsx'
@@ -60,6 +61,7 @@ export default function App() {
         {isHome ? (
           <>
             <Hero />
+            <StatsBand />
             <Conventions />
             <Intro />
             <hr className="divider" />

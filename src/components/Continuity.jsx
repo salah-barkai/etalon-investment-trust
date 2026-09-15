@@ -1,12 +1,4 @@
 import { Compass, Sparkles, Leaf, Construction, PlaneTakeoff, Truck, Building2, Hotel, Wheat } from 'lucide-react'
-import StatCounter from './StatCounter.jsx'
-
-const stats = [
-  { value: 150, suffix: '+', label: 'Projets réalisés' },
-  { value: 200, suffix: '+', label: 'Clients satisfaits' },
-  { value: 25, suffix: '+', label: 'Partenaires' },
-  { value: 6, suffix: '+', label: "Années d'expérience" },
-]
 
 const pillars = [
   ['01', Compass, 'Rigueur stratégique', 'Des décisions structurées autour de la mesure, de la discipline et d’une vision de long terme.'],
@@ -57,15 +49,6 @@ export default function Continuity() {
             <a href="https://www.stallioninvestment.td/" target="_blank" rel="noopener">
               Découvrir Stallion Investment <span aria-hidden="true">↗</span>
             </a>
-          </div>
-        </div>
-
-        <div className="stat-band" data-reveal>
-          <span className="stat-band-label">Le socle Stallion Investment, en chiffres</span>
-          <div className="stat-grid">
-            {stats.map((s) => (
-              <StatCounter key={s.label} {...s} />
-            ))}
           </div>
         </div>
 
